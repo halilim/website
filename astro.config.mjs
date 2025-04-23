@@ -17,8 +17,5 @@ export default defineConfig({
     shikiConfig: {
       theme: "css-variables",
     },
-  },
-  experimental: {
-    svg: true,
   }
 });

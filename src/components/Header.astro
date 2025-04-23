@@ -4,19 +4,20 @@ import Link from '@components/Link.astro';
 import { SITE } from '@consts';
 import HIcon from '../../public/H.svg';
 import { Icon } from 'astro-icon/components';
+
+const { isHome } = Astro.props;
 ---
 
 <header transition:persist>
   <Container>
     <div class="flex flex-wrap items-center justify-between gap-y-2">
       <Link href="/" underline={false}>
-        <div class="flex items-center font-semibold">
-          <HIcon aria-label="H icon" class="mr-2 size-6" />
-          <span>
-            {SITE.TITLE}
-          </span>
+        <div class="flex items-center font-semibold text-lg">
+          <HIcon aria-label="H icon" class="mr-2 size-8" />
+          {isHome ? <h1>{SITE.TITLE}</h1> : <span>{SITE.TITLE}</span>}
         </div>
       </Link>
+
       <nav class="flex items-center gap-1">
         <Link href="/blog">blog</Link>
         <span class="mx-2">•</span>
