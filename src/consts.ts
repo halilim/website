@@ -13,19 +13,27 @@ export const HOME: Metadata = {
 
 export const BLOG: Metadata = {
   TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  DESCRIPTION: "My blog posts",
 };
 
 export const SOCIALS: Socials = [
   {
-    NAME: "X (Twitter)",
-    HREF: "https://twitter.com/halilweb",
+    ICON: "RiTwitterXFill",
+    NAME: "Twitter",
+    HREF: "https://x.com/halilweb",
   },
   {
+    ICON: "MdiGithub",
     NAME: "GitHub",
     HREF: "https://github.com/halilim",
   },
   {
+    ICON: "MdiStackoverflow",
+    NAME: "Stack Overflow",
+    HREF: "https://stackoverflow.com/users/372654",
+  },
+  {
+    ICON: "MdiLinkedin",
     NAME: "LinkedIn",
     HREF: "https://www.linkedin.com/in/halilozgur/",
   },

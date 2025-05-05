@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import halilJpg from '/public/halil.jpg';
 import { SITE, HOME, SOCIALS } from '@consts';
@@ -21,81 +22,44 @@ const blog = (await getCollection('blog'))
         src={halilJpg}
         alt="Halil"
         loading="eager"
-        class="mr-3 size-24 rounded-full border-2 border-stone-300 transition-colors duration-300 ease-in-out hover:border-stone-400 active:border-stone-400 sm:mr-4 sm:size-32 dark:border-stone-600 dark:opacity-75 dark:transition-opacity dark:hover:opacity-100"
+        class="mb-4 size-24 place-self-center rounded-full border-2 border-stone-300 transition-colors duration-300 ease-in-out hover:border-stone-400 active:border-stone-400 sm:size-32 dark:border-stone-600 dark:opacity-75 dark:transition-opacity dark:hover:opacity-100"
       />
 
-      <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
-            <span>
-              <p>
-                Astro Micro is an accessible theme for <Link href="https://astro.build/">Astro</Link
-                >. It's a fork of
-                <Link href="https://github.com/markhorn-dev"> Mark Horn's </Link> popular theme <Link
-                  href="https://astro.build/themes/details/astronano/">Astro Nano</Link
-                >. Like Nano, Micro comes with zero frameworks installed.
-              </p>
-              <p>
-                Micro adds features like <Link href="https://pagefind.app/">Pagefind</Link> for search,
-                <Link href="https://giscus.app">Giscus</Link> for comments, and more. For a full list
-                of changes, see this <Link href="/blog/00-micro-changelog">blog post</Link>.
-              </p>
-            </span>
-            <span class="animate">
-              <p>
-                Micro still comes with everything great about Nano — full type safety, a sitemap, an
-                RSS feed, and Markdown + MDX support. Styled with TailwindCSS and preconfigured with
-                system, light, and dark themes.
-              </p>
-              <p>
-                Visit
-                <Link href="https://github.com/trevortylerlee/astro-micro">
-                  Astro Micro on GitHub
-                </Link>
-                to fork the repository to get started.
-              </p>
-            </span>
-          </article>
-        </section>
+      <p class="mb-4 text-center font-light sm:text-lg">
+        2 &times; dad, &epsilon; &times; programmer
+        <Link href="/about">more&hellip;</Link>
+      </p>
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">Latest posts</h2>
-            <Link href="/blog"> See all posts </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              blog.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+      <ul class="mb-8 flex flex-wrap justify-center gap-x-3">
+        {
+          SOCIALS.map((SOCIAL) => (
+            <li>
+              <Link href={SOCIAL.HREF} external aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}>
+                <span class="flex items-center gap-x-1 text-nowrap">
+                  <Icon class="size-6" name={SOCIAL.ICON} />
+                  <span class="hidden sm:inline-block">{SOCIAL.NAME}</span>
+                </span>
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
 
-        <section class="animate space-y-4">
-          <h2 class="font-semibold text-black dark:text-white">Let's Connect</h2>
-          <article>
-            <p>
-              If you want to get in touch with me about something or just to say hi, reach out on
-              social media or send me an email.
-            </p>
-          </article>
-          <ul class="not-prose flex flex-wrap gap-2">
-            {
-              SOCIALS.map((SOCIAL) => (
-                <li class="flex gap-x-2 text-nowrap">
-                  <Link href={SOCIAL.HREF} external aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}>
-                    {SOCIAL.NAME}
-                  </Link>
-                  {'/'}
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-      </div>
+      <section class="space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">Latest posts</h2>
+          <Link href="/blog">See all posts</Link>
+        </div>
+        <ul class="not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </aside>
   </Container>
 </Layout>

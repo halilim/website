@@ -12,26 +12,37 @@ const { isHome } = Astro.props;
   <Container>
     <div class="flex flex-wrap items-center justify-between gap-y-2">
       <Link href="/" underline={false}>
-        <div class="flex items-center font-semibold text-lg">
+        <div class="inline-flex items-center text-lg font-semibold hover:animate-pulse">
           <HIcon aria-label="H icon" class="mr-2 size-8" />
           {isHome ? <h1>{SITE.TITLE}</h1> : <span>{SITE.TITLE}</span>}
         </div>
       </Link>
 
-      <nav class="flex items-center gap-1">
+      <nav class="flex items-center gap-2 sm:gap-1">
         <Link href="/blog">blog</Link>
-        <span class="mx-2">•</span>
+        <span class="mx-2 hidden sm:inline-block">•</span>
         <Link href="/about">about</Link>
-        <span class="mx-2">•</span>
+        <span class="mx-2 hidden sm:inline-block">•</span>
 
         <button
           id="magnifying-glass"
           aria-label="Search"
           class="flex cursor-pointer items-center gap-1 rounded-full border border-black/15 bg-neutral-100 p-2 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black sm:p-1 md:px-2 dark:border-white/20 dark:bg-neutral-900 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
         >
-          <Icon name="material-symbols:search" />
+          <Icon name="material-symbols:search-rounded" />
           <span class="hidden sm:inline">Search</span>
         </button>
+
+        <span class="mx-2 hidden sm:inline-block">•</span>
+
+        <Link external underline={false} href="/rss.xml" aria-label="RSS feed">
+          <span
+            class="flex items-center gap-1 rounded-full border border-black/15 bg-neutral-100 p-2 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black sm:p-1 md:px-2 dark:border-white/20 dark:bg-neutral-900 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+          >
+            <Icon name="material-symbols:rss-feed-rounded" />
+            <span class="hidden sm:inline">RSS</span>
+          </span>
+        </Link>
       </nav>
     </div>
   </Container>
