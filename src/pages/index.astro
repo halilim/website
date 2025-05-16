@@ -27,18 +27,21 @@ const blog = (await getCollection('blog'))
 
       <p class="mb-4 text-center font-light sm:text-lg">
         2 &times; dad, &epsilon; &times; programmer
-        <Link href="/about">more&hellip;</Link>
+        <span class="text-sm"><Link href="/about">more&hellip;</Link></span>
       </p>
 
       <ul class="mb-8 flex flex-wrap justify-center gap-x-3">
         {
           SOCIALS.map((SOCIAL) => (
             <li>
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}>
-                <span class="flex items-center gap-x-1 text-nowrap">
-                  <Icon class="size-6" name={SOCIAL.ICON} />
-                  <span class="hidden sm:inline-block">{SOCIAL.NAME}</span>
-                </span>
+              <Link
+                href={SOCIAL.HREF}
+                external
+                aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+                class="gap-x-1 text-nowrap"
+              >
+                <Icon class="size-6" name={SOCIAL.ICON} />
+                <span class="hidden sm:inline-block">{SOCIAL.NAME}</span>
               </Link>
             </li>
           ))
