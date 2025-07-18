@@ -18,12 +18,16 @@ const blog = (await getCollection('blog'))
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION} isHome={true}>
   <Container>
     <aside data-pagefind-ignore>
-      <Image
-        src={halilJpg}
-        alt="Halil"
-        loading="eager"
-        class="mb-4 size-24 place-self-center rounded-full border-2 border-stone-300 transition-colors duration-300 ease-in-out hover:border-stone-400 active:border-stone-400 sm:size-32 dark:border-stone-600 dark:opacity-75 dark:transition-opacity dark:hover:opacity-100"
-      />
+      <div class="mb-4 flex justify-center">
+        <Link href="/about">
+          <Image
+            src={halilJpg}
+            alt="Halil"
+            loading="eager"
+            class="size-24 rounded-full border-2 border-stone-300 transition-colors duration-300 ease-in-out hover:border-stone-400 active:border-stone-400 sm:size-32 dark:border-stone-600 dark:opacity-75 dark:transition-opacity dark:hover:opacity-100"
+          />
+        </Link>
+      </div>
 
       <p class="mb-4 text-center font-light sm:text-lg">
         2 &times; dad, &epsilon; &times; programmer
