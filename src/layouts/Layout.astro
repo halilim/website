@@ -8,10 +8,10 @@ import { SITE } from '@consts';
 type Props = {
   isHome?: boolean;
   title: string;
-  description: string;
+  description?: string;
 };
 
-const { isHome = false, title: pageTitle, description } = Astro.props;
+const { isHome = false, title: pageTitle, description = '' } = Astro.props;
 const title = [pageTitle, SITE.TITLE].filter(Boolean).join(' | ');
 ---
 
@@ -23,8 +23,8 @@ const title = [pageTitle, SITE.TITLE].filter(Boolean).join(' | ');
   <body>
     <noscript>
       <style>
-        .animate{
-          opacity:1;
+        .animate {
+          opacity: 1;
           translate: var(--tw-translate-x) calc(var(--spacing) * 0);
         }
       </style>

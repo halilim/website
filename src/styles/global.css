@@ -20,6 +20,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -74,6 +75,10 @@
 }
 
 @layer utilities {
+  article h1 {
+    @apply: text-3xl;
+  }
+
   article a {
     @apply font-sans text-current underline underline-offset-[3px];
     @apply decoration-black/30 dark:decoration-white/30;
