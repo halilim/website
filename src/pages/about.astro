@@ -1,0 +1,103 @@
+---
+import { SOCIALS } from '@consts';
+import Container from '@components/Container.astro';
+import Layout from '@layouts/Layout.astro';
+import Link from '@components/Link.astro';
+import Photo from '@components/Photo.astro';
+import Socials from '@components/Socials.astro';
+
+const linkedIn = SOCIALS.find((social) => social.NAME === 'LinkedIn');
+if (!linkedIn) {
+  throw new Error('Could not find LinkedIn in SOCIALS');
+}
+const linkedInUrl = linkedIn.HREF;
+---
+
+<Layout title="About" description="More about Halil">
+  <Container>
+    <article>
+      <h1 class="text-3xl">About</h1>
+
+      <div class="items-center gap-8 md:flex">
+        <Photo loading="eager" class="mb-4 size-48 object-top-left sm:size-64" />
+
+        <div>
+          <p class="text-center text-lg font-light">
+            Software Developer from Türkiye. Testing and tooling aficionado. Dad of two, husband of
+            one. Lover of rain and pines (and obviously, lists). Wikipedia addict. Semi-hermit.
+          </p>
+
+          <Socials />
+        </div>
+      </div>
+
+      <h2>Personal</h2>
+
+      <ul>
+        <li>
+          Born in <Link href="https://en.wikipedia.org/wiki/Bulgaria">Bulgaria</Link>, living in
+          <Link href="https://en.wikipedia.org/wiki/Bursa">Bursa</Link>, Türkiye (previously
+          <Link href="https://en.wikipedia.org/wiki/İzmir">İzmir</Link>)
+        </li>
+
+        <li>
+          Attended <Link href="https://eee.deu.edu.tr/en/">Electronics Engineering</Link>
+          but didn't finish
+        </li>
+
+        <li>
+          Was thinking of studying Medicine ⚕ until the final year of high school (still interested
+          in biology)
+        </li>
+      </ul>
+
+      <h2>Professional</h2>
+
+      <h3>2016 - Current</h3>
+      <p>Working remotely as a senior developer, mostly on the backend with Ruby on Rails.</p>
+      <ul>
+        <li>
+          Other tech: PostgreSQL, MySQL, Elasticsearch, RabbitMQ, AWS, Microservices, Docker,
+          Kubernetes
+        </li>
+        <li>Industries: Construction management, e-commerce, logistics, marketplaces</li>
+        <li>Number of users: 1,000 - 10,000,000</li>
+        <li>Company sizes: 10 - 5,000</li>
+      </ul>
+
+      <h3>2014 - 2016</h3>
+      <p>
+        Just as I was developing interest in Ruby and Rails, I was invited to join a startup as the
+        CTO and a co-founder: Yemek Guru, a personalized food recipe service.
+      </p>
+      <ul>
+        <li>Scaled from thousands to millions of subscribers</li>
+        <li>Tech: Ruby on Rails, EventMachine, MongoDB, Solr, Capistrano</li>
+      </ul>
+
+      <h3>2007 - 2014</h3>
+      <p>Worked at local web design agencies using PHP, Laravel, ASP, C#, etc.</p>
+      <ul>
+        <li>
+          Built one of the most popular WHOIS services of the time, manually parsing hundreds of
+          different TLD outputs
+        </li>
+
+        <li>Hundreds of small to medium-sized websites</li>
+
+        <li>
+          "Full-stack" everything - start with PSD files, "cut" them into HTML, sprinkle some
+          JavaScript (often jQuery) and PHP
+        </li>
+
+        <li>Linux server management and whatnot</li>
+      </ul>
+
+      <h3>Before 2007</h3>
+      <ul>
+        <li>Learned about web dev in high school</li>
+        <li>Got interested in programming in middle school (GW-BASIC and QBasic)</li>
+      </ul>
+    </article>
+  </Container>
+</Layout>

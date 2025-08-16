@@ -2,7 +2,7 @@
 
 ## Fork Information
 
-Slightly customized, with intention to keep in sync.
+Slightly customized, with intention to keep somewhat in sync.
 
 ## Original Readme
 
