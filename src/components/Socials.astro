@@ -7,19 +7,17 @@ import Link from '@components/Link.astro';
 const { class: otherClasses = '', ...rest } = Astro.props;
 ---
 
-<ul class={cn('flex flex-wrap justify-center gap-x-3 not-prose', otherClasses)} {...rest}>
+<div class={cn('flex flex-wrap justify-center gap-x-3 not-prose', otherClasses)} {...rest}>
   {
     SOCIALS.map((SOCIAL) => (
-      <li>
-        <Link
-          href={SOCIAL.HREF}
-          aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-          class="gap-x-1 text-nowrap"
-        >
-          <Icon class="size-6" name={SOCIAL.ICON} />
-          <span class="hidden sm:inline-block">{SOCIAL.NAME}</span>
-        </Link>
-      </li>
+      <Link
+        href={SOCIAL.HREF}
+        aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+        class="gap-x-1 text-nowrap"
+      >
+        <Icon class="size-6" name={SOCIAL.ICON} />
+        <span class="hidden sm:inline-block">{SOCIAL.NAME}</span>
+      </Link>
     ))
   }
-</ul>
+</div>

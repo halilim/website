@@ -11,7 +11,7 @@ const { isHome } = Astro.props;
 <header transition:persist>
   <Container>
     <div class="flex flex-wrap items-center justify-between gap-y-2">
-      <Link href="/" underline={false} class="text-lg font-semibold hover:animate-pulse">
+      <Link href="/" underline={false} class="text-lg font-semibold">
         <HIcon aria-label="H icon" class="mr-2 size-8" />
         {isHome ? <h1>{SITE.TITLE}</h1> : <span>{SITE.TITLE}</span>}
       </Link>

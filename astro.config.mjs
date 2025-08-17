@@ -1,15 +1,14 @@
 import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
+import devtoolsJson from "vite-plugin-devtools-json";
+import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import pagefind from "astro-pagefind";
-import devtoolsJson from 'vite-plugin-devtools-json';
+import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-
-import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-micro.vercel.app",
+  site: process.env.SITE || "http://localhost:4321",
   integrations: [sitemap(), mdx(), pagefind(), icon()],
   vite: {
     plugins: [devtoolsJson(), tailwindcss()],
@@ -18,5 +17,5 @@ export default defineConfig({
     shikiConfig: {
       theme: "css-variables",
     },
-  }
+  },
 });

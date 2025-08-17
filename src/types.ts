@@ -9,6 +9,11 @@ export type Metadata = {
   DESCRIPTION: string;
 };
 
+export type OgImage = {
+  path: string;
+  alt: string;
+}
+
 export type Socials = {
   ICON: string;
   NAME: string;

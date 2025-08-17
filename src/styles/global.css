@@ -76,7 +76,15 @@
 
 @layer utilities {
   article h1 {
-    @apply: text-3xl;
+    @apply text-2xl text-center sm:text-left;
+  }
+
+  article h2 {
+    @apply text-xl;
+  }
+
+  article h3 {
+    @apply text-lg;
   }
 
   article a {
