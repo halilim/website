@@ -18,6 +18,12 @@ export const BLOG: Metadata = {
 
 export const SOCIALS: Socials = [
   {
+    ICON: "MdiMastodon",
+    NAME: "Mastodon",
+    HREF: "https://mastodon.social/@halilim",
+    REL_ME: true,
+  },
+  {
     ICON: "RiTwitterXFill",
     NAME: "Twitter",
     HREF: "https://x.com/halilweb",

@@ -14,6 +14,7 @@ const { class: otherClasses = '', ...rest } = Astro.props;
         href={SOCIAL.HREF}
         aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
         class="gap-x-1 text-nowrap"
+        rel={SOCIAL.REL_ME ? 'me' : null}
       >
         <Icon class="size-6" name={SOCIAL.ICON} />
         <span class="hidden sm:inline-block">{SOCIAL.NAME}</span>
