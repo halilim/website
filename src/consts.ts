@@ -24,17 +24,6 @@ export const PROJECTS: Metadata = {
 
 export const SOCIALS: Socials = [
   {
-    ICON: "MdiMastodon",
-    NAME: "Mastodon",
-    HREF: "https://mastodon.social/@halilim",
-    REL_ME: true,
-  },
-  {
-    ICON: "RiTwitterXFill",
-    NAME: "Twitter",
-    HREF: "https://x.com/halilweb",
-  },
-  {
     ICON: "MdiGithub",
     NAME: "GitHub",
     HREF: "https://github.com/halilim",
