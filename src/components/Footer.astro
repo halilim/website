@@ -2,9 +2,7 @@
 import Container from '@components/Container.astro';
 import BackToTop from '@components/BackToTop.astro';
 import HIcon from '../../public/H.svg';
-import { SITE } from '@consts';
 import Link from '@components/Link.astro';
-import { Icon } from 'astro-icon/components';
 import ThemeButton from '@components/ThemeButton.astro';
 ---
 
@@ -13,17 +11,7 @@ import ThemeButton from '@components/ThemeButton.astro';
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <HIcon aria-label="H icon" class="mr-2 size-5" />
-        <span class="mr-3">
-          <span class="hidden sm:inline">
-            {new Date().getFullYear()}{' '}{SITE.TITLE}
-          </span>
-        </span>
-
-        <Link href="https://github.com/halilim/website">
-          Astro
-          <Icon name="RiHeartLine" class="mx-1" />
-          Micro
-        </Link>
+        <Link href="https://github.com/halilim/website">Source</Link>
       </div>
 
       <div class="flex items-center">
