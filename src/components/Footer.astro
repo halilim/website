@@ -15,8 +15,7 @@ import ThemeButton from '@components/ThemeButton.astro';
         <HIcon aria-label="H icon" class="mr-2 size-5" />
         <span class="mr-3">
           <span class="hidden sm:inline">
-            &copy; {new Date().getFullYear()}
-            {SITE.TITLE}
+            {new Date().getFullYear()}{' '}{SITE.TITLE}
           </span>
         </span>
 
